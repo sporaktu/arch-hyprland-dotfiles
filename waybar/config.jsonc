@@ -1,0 +1,114 @@
+{
+  "position": "top",
+  "height": 34,
+  "margin-top": 5,
+  "margin-left": 10,
+  "margin-right": 10,
+  "spacing": 0,
+  "reload_style_on_change": true,
+
+  "modules-left": ["group/workspaces", "group/window"],
+  "modules-center": ["group/media"],
+  "modules-right": ["group/system", "group/status", "group/clock"],
+
+  "group/workspaces": {
+    "orientation": "horizontal",
+    "modules": ["hyprland/workspaces"]
+  },
+
+  "group/window": {
+    "orientation": "horizontal",
+    "modules": ["hyprland/window"]
+  },
+
+  "group/media": {
+    "orientation": "horizontal",
+    "modules": ["mpris"]
+  },
+
+  "group/system": {
+    "orientation": "horizontal",
+    "modules": ["cpu", "memory", "network"]
+  },
+
+  "group/status": {
+    "orientation": "horizontal",
+    "modules": ["tray", "pulseaudio"]
+  },
+
+  "group/clock": {
+    "orientation": "horizontal",
+    "modules": ["clock"]
+  },
+
+  "hyprland/workspaces": {
+    "format": "{id}",
+    "on-scroll-up": "hyprctl dispatch workspace e+1",
+    "on-scroll-down": "hyprctl dispatch workspace e-1",
+    "on-click": "activate",
+    "all-outputs": false
+  },
+
+  "hyprland/window": {
+    "format": "{}",
+    "max-length": 35,
+    "separate-outputs": true,
+    "rewrite": {
+      "(.*) — Mozilla Firefox": " $1",
+      "(.*) - Discord": "󰙯 $1",
+      "(.*)": "$1"
+    }
+  },
+
+  "mpris": {
+    "format": "{player_icon}  {artist} - {title}",
+    "format-paused": "{player_icon}  {artist} - {title}",
+    "max-length": 40,
+    "player-icons": {
+      "default": "",
+      "spotify": "󰎆",
+      "firefox": ""
+    },
+    "status-icons": {
+      "paused": ""
+    }
+  },
+
+  "clock": {
+    "format": "  {:%a %d %b    %I:%M %p}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-muted": "  muted",
+    "format-icons": {
+      "default": ["", "", ""]
+    },
+    "on-click": "pavucontrol",
+    "scroll-step": 2
+  },
+
+  "cpu": {
+    "format": "󰻠 {usage}%",
+    "interval": 3
+  },
+
+  "memory": {
+    "format": "󰍛 {percentage}%",
+    "interval": 5
+  },
+
+  "network": {
+    "format-wifi": "  {essid}",
+    "format-ethernet": "󰈀 {ifname}",
+    "format-disconnected": "  Disconnected",
+    "tooltip-format": "{ipaddr}/{cidr}",
+    "max-length": 20
+  },
+
+  "tray": {
+    "icon-size": 15,
+    "spacing": 8
+  }
+}

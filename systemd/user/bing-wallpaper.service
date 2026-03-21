@@ -1,0 +1,8 @@
+[Unit]
+Description=Fetch and set Bing daily wallpaper
+
+[Service]
+Type=oneshot
+Environment=WAYLAND_DISPLAY=wayland-1
+Environment=XDG_RUNTIME_DIR=/run/user/1000
+ExecStart=/home/gray/.config/swww/bing-wallpaper.sh
