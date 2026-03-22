@@ -81,6 +81,24 @@ tooltip {
     background: alpha(@orange, 0.15);
 }
 
+/* ---- Taskbar ---- */
+#taskbar button {
+    padding: 0 4px;
+    margin: 0 1px;
+    border: none;
+    border-radius: 8px;
+    background: transparent;
+    transition: all 0.2s ease;
+}
+
+#taskbar button:hover {
+    background: alpha(@magenta, 0.15);
+}
+
+#taskbar button.active {
+    background: alpha(@blue, 0.2);
+}
+
 /* ---- Active window ---- */
 #window {
     color: @fg;

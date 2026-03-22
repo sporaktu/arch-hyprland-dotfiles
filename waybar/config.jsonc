@@ -7,7 +7,7 @@
   "spacing": 0,
   "reload_style_on_change": true,
 
-  "modules-left": ["group/workspaces", "group/window"],
+  "modules-left": ["group/workspaces", "group/taskbar"],
   "modules-center": ["group/media"],
   "modules-right": ["group/system", "group/status", "group/clock"],
 
@@ -16,9 +16,9 @@
     "modules": ["hyprland/workspaces"]
   },
 
-  "group/window": {
+  "group/taskbar": {
     "orientation": "horizontal",
-    "modules": ["hyprland/window"]
+    "modules": ["wlr/taskbar"]
   },
 
   "group/media": {
@@ -57,15 +57,15 @@
     "all-outputs": false
   },
 
-  "hyprland/window": {
-    "format": "{}",
-    "max-length": 35,
-    "separate-outputs": true,
-    "rewrite": {
-      "(.*) — Mozilla Firefox": " $1",
-      "(.*) - Discord": "󰙯 $1",
-      "(.*)": "$1"
-    }
+  "wlr/taskbar": {
+    "format": "{icon}",
+    "icon-size": 18,
+    "icon-theme": "Papirus-Dark",
+    "tooltip": true,
+    "tooltip-format": "{title}",
+    "on-click": "activate",
+    "on-click-middle": "close",
+    "active-first": true
   },
 
   "mpris": {
